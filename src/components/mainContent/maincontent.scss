@@ -1,0 +1,9 @@
+.mainContent {
+  color: blue;
+  font-style: to-upper-case($string: "");
+  font-size: 20px;
+}
+
+.mainContent:hover {
+  color: darkblue;
+}
