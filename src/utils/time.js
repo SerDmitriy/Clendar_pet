@@ -1,7 +1,11 @@
-export function getFullHours (minutes) {
-  return parseInt(minutes / 60) + 8
-}
+export function taskTime (task) {
 
-export function getMinutes (minutes) {
-  return (minutes % 60)
+  const taskParams = {
+    startHour: parseInt(task.start / 60) + 8,
+    startMin: (task.start % 60),
+    finishHour: parseInt( (task.start + task.duration) / 60) + 8,
+    finishMin: ( (task.start + task.duration) % 60),
+  }
+  return taskParams
+
 }
