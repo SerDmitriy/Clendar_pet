@@ -1,10 +1,8 @@
 .mainContent {
   color: blue;
-  font-style: to-upper-case($string: "");
-  font-size: 20px;
+  font-family: sans-serif;
 }
 
 .mainContent:hover {
   color: darkblue;
-  font-size: 20px;
 }

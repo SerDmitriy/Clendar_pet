@@ -1,23 +1,22 @@
 import React from 'react'
 import './timeGrid.scss'
 
-class TimeGrid extends React.Component {
+function TimeGrid () {
   
   render () {
     let time = []
-    for (let i = 8; i < 17; i++) {
+    for (let i = 8; i < 18; i++) {
       time.push({
         className: 'timeGrid-hour',
-        data: `${i}-00`,
+        data: `${i > 12 ? i - 12 : i}-00`,
       })
       time.push({
         className: 'timeGrid-hour-secondary',
-        data: `${i}-30`,
+        data: `${i > 12 ? i - 12 : i}-30`,
       })
     }
-    console.log('TimeGrid props', this.props)
+    time.pop()
 
-    console.log('TimeGrid time', time)
     return (
         <div className='timeGrid'>
           {time.map( item => 

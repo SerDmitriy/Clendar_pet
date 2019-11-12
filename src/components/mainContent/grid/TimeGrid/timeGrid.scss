@@ -1,6 +1,6 @@
 .timeGrid {
   width: 250px;
-  font-size: 16px;
+  font-size: 14px;
   color: grey;
   position: absolute;
   top: 20px;
@@ -15,5 +15,6 @@
 
   .timeGrid-hour-secondary {
     height: 50px;
+    font-size: 9px;
   }
 }
