@@ -1,14 +1,14 @@
 import React from 'react'
 import './maincontent.scss'
-import Grid from './grid/Grid'
+import Calendar from './Calendar/Calendar'
 
-function Maincontent() {
+function MainContent() {
 	return (
 		<div>
 			<div>Input</div>
-			<Grid />
+			<Calendar />
 		</div>
 	)
 }
 
-export default Maincontent
+export default MainContent

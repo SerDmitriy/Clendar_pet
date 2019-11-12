@@ -1,10 +1,10 @@
 import React from 'react'
-import './grid.scss'
+import './calendar.scss'
 import Task from './Task/Task'
 import TimeGrid from './TimeGrid/TimeGrid'
 import { taskTime } from '../../../utils/time'
 
-class Grid extends React.Component {
+class Calendar extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -77,7 +77,7 @@ class Grid extends React.Component {
 		let newTasks = JSON.parse(JSON.stringify(tasks))
 
 		newTasks.forEach(t => delete t.id)
-		console.log(JSON.stringify(newTasks))
+		//console.log(JSON.stringify(newTasks))
 
 		tasks.forEach(task => {
 			task.taskParams = this.getTaskParams(task.id)
@@ -104,12 +104,14 @@ class Grid extends React.Component {
 		return (
 			<React.Fragment>
 				<TimeGrid />
-				{tasks.map(task => (
-					<Task key={task.id} task={task} />
-				))}
+				<div className='task-wrapper'>
+					{tasks.map(task => (
+						<Task key={task.id} task={task} />
+					))}
+				</div>
 			</React.Fragment>
 		)
 	}
 }
 
-export default Grid
+export default Calendar
