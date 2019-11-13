@@ -1,17 +1,26 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { push } from 'connected-react-router'
 import './nav.scss'
+import { publicRouter, privatRouter } from '../../routes'
 
-export default function NavBar(props) {
+function NavBar(props) {
+	const { push } = props
+
 	return (
 		<div className='navBar'>
-			<ol>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-				<li>12</li>
-			</ol>
+			{publicRouter.map(route => (
+				<button className='navBar__button' key={route.path} onClick={() => push(route.path)}>
+					{route.path}
+				</button>
+			))}
+			{privatRouter.map(route => (
+				<button className='navBar__button' key={route.path} onClick={() => push(route.path)}>
+					{route.path}
+				</button>
+			))}
 		</div>
 	)
 }
+
+export default connect(null, { push })(NavBar)

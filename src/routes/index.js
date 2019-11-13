@@ -1,5 +1,7 @@
 import React from 'react'
 import Calendar from '../components/mainContent/Calendar/Calendar'
+import Calendars from '../components/mainContent/Calendars/Calendars'
+import Users from '../components/mainContent/Users/Users'
 import { ROUTER_PATH } from '../constants'
 
 export const publicRouter = [
@@ -7,6 +9,11 @@ export const publicRouter = [
 		exact: true,
 		path: ROUTER_PATH.CALENDAR,
 		component: Calendar,
+	},
+	{
+		exact: true,
+		path: ROUTER_PATH.CALENDARS,
+		component: Calendars,
 	},
 	{
 		exact: true,
@@ -26,7 +33,7 @@ export const publicRouter = [
 			<div>
 				{'registration'}
 				<br />
-				<a href='/'>Home page</a>
+				<a href='/'>Home page wmebfewhbfejw bhejwh ewjhf ewjhfg jwehgf je</a>
 			</div>
 		),
 	},
@@ -48,13 +55,7 @@ export const publicRouter = [
 export const privatRouter = [
 	{
 		exact: true,
-		path: ROUTER_PATH.USER,
-		component: () => (
-			<div>
-				{'One user information'}
-				<br />
-				<a href='/'>Home page</a>
-			</div>
-		),
+		path: ROUTER_PATH.USERS,
+		component: Users,
 	},
 ]
