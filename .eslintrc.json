@@ -7,10 +7,7 @@
     "parserOptions": {
         "ecmaVersion": 2018
     },
-    "plugins": [
-        "react",
-        "prettier"
-    ],
+    "plugins": ["react", "prettier"],
     "rules": {
         "prettier/prettier": [
             "error",

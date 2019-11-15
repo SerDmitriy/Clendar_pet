@@ -1,0 +1,10 @@
+{
+	"ru": {
+		"translation": {
+      "Welcome to React": "Приветствуем в React и react-i18next",
+      "hello world": "привет мир",
+			"test": "тест",
+      "Add calendar": "Добавить календарь"
+		}
+	}
+}

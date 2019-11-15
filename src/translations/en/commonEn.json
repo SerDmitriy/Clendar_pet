@@ -1,0 +1,20 @@
+{
+	"en": {
+		"translation": {
+      "Welcome to React": "Welcome to React and react-i18next",
+      "hello world": "privet",
+      "test": "test",
+      "Add calendar": "Add calendar Engl"
+		}
+  },
+   "de": {
+		"translation": {
+      "Add calendar": "Der calend 3"
+		}
+  },
+   "ua": {
+		"translation": {
+      "Add calendar": "Додати календар"
+		}
+	}
+}
