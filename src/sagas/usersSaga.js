@@ -4,7 +4,10 @@ import { Api } from '../entries/ApiTransport'
 
 const api = Api.getInstance()
 
+console.log(actions, types)
+
 function* fetchUsers({ payload, callback }) {
+	console.log('979actions ', actions)
 	try {
 		const { data } = yield call(() => api.get(`users/`, payload))
 		console.log('fetchUsers api.get data ', data)
@@ -24,12 +27,12 @@ function* createUser({ payload, callback }) {
 	try {
 		const { data } = yield call(() => api.post(`users/`, payload))
 		console.log('createUser api.post data ', data)
-		yield put(actions.CREATE_NEW_USER.SUCCESS(data))
+		yield put(actions.ADD_USER.SUCCESS(data))
 
 		callback && typeof callback === 'function' && callback()
 	} catch (err) {
 		yield put(
-			actions.CREATE_NEW_USER.FAILED({
+			actions.ADD_USER.FAILED({
 				error: err.response.data.detail,
 			})
 		)
@@ -38,5 +41,5 @@ function* createUser({ payload, callback }) {
 
 export default function* userWatcher() {
 	yield takeLatest(types.FETCH_USERS.REQUEST, fetchUsers)
-	yield takeLatest(types.CREATE_NEW_USER.REQUEST, createUser)
+	yield takeLatest(types.ADD_USER.REQUEST, createUser)
 }

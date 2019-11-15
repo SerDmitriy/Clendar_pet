@@ -7,3 +7,5 @@ export const ROUTER_PATH = {
 	USER: '/user',
 	USERS: '/users',
 }
+
+export const LANGS = ['en', 'ru', 'ua', 'de']

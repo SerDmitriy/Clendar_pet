@@ -1,11 +1,6 @@
-const initialState = {
-	errors: null,
-	loading: false,
-	success: false,
-	isAuthenticated: false,
-}
+import initialState from '../store/initialState'
 
-export default (state = initialState, action) => {
+export default (state = initialState.calendar, action) => {
 	switch (action.type) {
 		case 'CALEND_REQUEST':
 			return {

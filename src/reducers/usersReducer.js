@@ -1,28 +1,13 @@
-import i18n from '../i18n'
+import initialState from '../store/initialState'
 
-const initialState = {
-	errors: null,
-	loading: false,
-	success: false,
-	lang: 'en',
-	currentUser: {},
-	users: [{}],
-}
-
-export default (state = initialState, action) => {
+export default (state = initialState.user, action) => {
 	switch (action.type) {
-		case 'LANG_SUCCESS':
-			console.log('LANG action.payload.lang', action.payload.lang)
-			console.log('LANG state.lang', state.lang)
-			if (action.payload.lang !== state.lang) {
-				i18n.changeLanguage(action.payload.lang)
-			}
+		case 'UPDATE_USER_SUCCESS':
 			return {
 				...state,
 				...action.payload,
 			}
 		case 'FETCH_USERS_REQUEST':
-			console.log('FETCH_USERS_REQUEST')
 			return {
 				...state,
 				loading: true,

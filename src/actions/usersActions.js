@@ -1,6 +1,5 @@
-import { actionsCreator } from '../utils/index'
+import { actionsCreator } from '../utils'
 
-const statuses = ['REQUEST', 'SUCCESS', 'FAILED', 'CLEAR']
-const actionTypes = ['LANG', 'FETCH_USERS', 'ADD_USER', 'REMOVE_USER']
+const actionTypes = ['UPDATE_USER', 'FETCH_USERS', 'ADD_USER', 'REMOVE_USER']
 
-export default actionsCreator(statuses, actionTypes)
+export const { actions, types } = actionsCreator(actionTypes)

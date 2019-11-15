@@ -4,20 +4,25 @@ export const genKey = () => {
 		.slice(3, 10)
 }
 
-export const actionsCreator = (statuses, actionTypes) => {
+const statuses = ['REQUEST', 'SUCCESS', 'FAILED', 'CLEAR']
+
+export const actionsCreator = actionTypes => {
 	const actions = {}
+	const types = {}
 	actionTypes.forEach(actionType => {
 		actions[actionType] = {}
-		statuses.forEach(
-			status =>
-				(actions[actionType][status] = (payload, callback, options) => ({
-					type: `${actionType}_${status}`.toUpperCase(),
-					payload,
-					callback,
-					options,
-				}))
-		)
-	})
+		types[actionType] = {}
 
-	return actions
+		statuses.forEach(status => {
+			actions[actionType][status] = (payload, callback, options) => ({
+				type: `${actionType}_${status}`.toUpperCase(),
+				payload,
+				callback,
+				options,
+			})
+
+			types[actionType][status] = `${actionType}_${status}`.toUpperCase()
+		})
+	})
+	return { actions, types }
 }
