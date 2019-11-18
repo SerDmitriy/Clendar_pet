@@ -4,17 +4,29 @@
       "Welcome to React": "Welcome to React and react-i18next",
       "hello world": "privet",
       "test": "test",
-      "Add calendar": "Add calendar Engl"
+      "Add calendar": "Add calendar",
+      "Add user": "Add benutzerin",
+      "Calendar": "Calendar",
+      "Calendars": "Calendars",
+      "Login": "Login",
+      "Registration": "Registration",
+      "Home": "Home",
+      "User": "User",
+      "Users": "Users"
 		}
   },
    "de": {
 		"translation": {
-      "Add calendar": "Der calend 3"
+      "Add calendar": "Kalender hinzufügen",
+      "Add user": "Benutzer hinzufügen",
+      "Welcome to React": "Willkommen bei React and react-i18next",
+      "Calendar": "Der Kalender",
+      "Calendars": "Kalender",
+      "Login": "Anmeldung",
+      "Registration": "Registrierung",
+      "Home": "Zuhause",
+      "User": "Benutzerin",
+      "Users": "Benutzer"
 		}
-  },
-   "ua": {
-		"translation": {
-      "Add calendar": "Додати календар"
-		}
-	}
+  }
 }

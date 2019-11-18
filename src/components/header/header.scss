@@ -1,10 +1,13 @@
 .header-wrapper {
   width: 100%;
-  background-color: darkgrey;
   display: flex;
   justify-content: flex-end;
 
   &__lang {
-    width: 100px;
+    // width: 100px;
   }
+}
+
+.lang__select {
+  width: 50px;
 }

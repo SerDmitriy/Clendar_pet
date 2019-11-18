@@ -24,5 +24,6 @@ export const actionsCreator = actionTypes => {
 			types[actionType][status] = `${actionType}_${status}`.toUpperCase()
 		})
 	})
+
 	return { actions, types }
 }

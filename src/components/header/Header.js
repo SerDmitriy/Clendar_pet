@@ -1,9 +1,10 @@
 import './header.scss'
 import React from 'react'
-import { actions } from '../../actions/rootActions'
+import { actions } from '../../actions/usersActions'
 import { connect } from 'react-redux'
 import { withTranslation } from 'react-i18next'
-import { LANGS } from '../../constants'
+import i18n from '../../i18n'
+import { LANGS_CAPITAL } from '../../constants'
 
 class Header extends React.Component {
 	constructor(props) {
@@ -11,34 +12,30 @@ class Header extends React.Component {
 		this.state = {}
 	}
 
-	handleChangeLang = lang => {
-		const { langUsers, i18n, user } = this.props
-
+	handleChangeLang = e => {
+		const { langUsers, user } = this.props
+		const lang = e.target.value
 		langUsers({ ...user, lang })
 		i18n.changeLanguage(lang)
 	}
 
 	render() {
-		// const {} = this.state
-		const { addUser, user, fetchUsers } = this.props
-
-		console.log('Header actions ', actions)
-		console.log('Header user ', user)
+		const { addUser, fetchUsers, t } = this.props
 
 		return (
 			<React.Fragment>
 				<div className='header-wrapper'>
-					<button className='header-wrapper__lang' onClick={() => addUser({ lang: 'de' })} key={123}>
-						{'addUser'}
+					<button className='header-wrapper__lang' onClick={() => addUser({ id: 5 })} key={123}>
+						{t('Add user')}
 					</button>
-					<button className='header-wrapper__lang' onClick={() => fetchUsers({ lang: 'de' })} key={77123}>
+					<button className='header-wrapper__lang' onClick={() => fetchUsers({ id: 7 })} key={77123}>
 						{'fetchUsers'}
 					</button>
-					{LANGS.map(lang => (
-						<button className='header-wrapper__lang' onClick={() => this.handleChangeLang(lang)} key={lang}>
-							{lang}
-						</button>
-					))}
+					<select className='lang__select' onChange={this.handleChangeLang}>
+						{LANGS_CAPITAL.map(lang => (
+							<option value={lang.toLowerCase()}>{lang}</option>
+						))}
+					</select>
 				</div>
 			</React.Fragment>
 		)

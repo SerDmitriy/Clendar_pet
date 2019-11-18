@@ -8,4 +8,20 @@ export const ROUTER_PATH = {
 	USERS: '/users',
 }
 
-export const LANGS = ['en', 'ru', 'ua', 'de']
+export const ROUTER_NAME = {
+	CALENDAR: 'Calendar',
+	CALENDARS: 'Calendars',
+	LOGIN: 'Login',
+	REGISTRATION: 'Registration',
+	HOME: 'Home',
+	USER: 'User',
+	USERS: 'Users',
+}
+
+export const LANGS_LOW = ['en', 'ru', 'ua', 'de']
+export const LANGS_CAPITAL = ['En', 'Ru', 'Ua', 'De']
+
+export const API = {
+	CALENDARS: '/calendars',
+	USERS: '/users',
+}

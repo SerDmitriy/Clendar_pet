@@ -1,5 +1,5 @@
 import { actionsCreator } from '../utils/index'
 
-const actionTypes = ['CALENDAR']
+const actionTypes = ['ADD_CALENDAR', 'FETCH_CALENDAR', 'UPDATE_CALENDAR', 'REMOVE_CALENDAR']
 
-export default actionsCreator(actionTypes)
+export const { actions, types } = actionsCreator(actionTypes)

@@ -1,15 +1,14 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
 import { actions, types } from '../actions/usersActions'
 import { Api } from '../entries/ApiTransport'
+import { API } from '../constants'
 
 const api = Api.getInstance()
-
-console.log(actions, types)
 
 function* fetchUsers({ payload, callback }) {
 	console.log('979actions ', actions)
 	try {
-		const { data } = yield call(() => api.get(`users/`, payload))
+		const { data } = yield call(() => api.get(API.USERS, payload))
 		console.log('fetchUsers api.get data ', data)
 		yield call(actions.FETCH_USERS.SUCCESS(data))
 
@@ -25,7 +24,7 @@ function* fetchUsers({ payload, callback }) {
 
 function* createUser({ payload, callback }) {
 	try {
-		const { data } = yield call(() => api.post(`users/`, payload))
+		const { data } = yield call(() => api.post(API.USERS, payload))
 		console.log('createUser api.post data ', data)
 		yield put(actions.ADD_USER.SUCCESS(data))
 
