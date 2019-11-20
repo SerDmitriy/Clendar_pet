@@ -13,7 +13,6 @@ export default (state = initialState.user, action) => {
 				loading: true,
 			}
 		case 'FETCH_USERS_SUCCESS':
-			console.log('FETCH_USERS_SUCCESS')
 			return {
 				...state,
 				currentUser: action.payload,

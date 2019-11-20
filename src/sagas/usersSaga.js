@@ -6,10 +6,8 @@ import { API } from '../constants'
 const api = Api.getInstance()
 
 function* fetchUsers({ payload, callback }) {
-	console.log('979actions ', actions)
 	try {
 		const { data } = yield call(() => api.get(API.USERS, payload))
-		console.log('fetchUsers api.get data ', data)
 		yield call(actions.FETCH_USERS.SUCCESS(data))
 
 		callback && typeof callback === 'function' && callback()
@@ -25,7 +23,6 @@ function* fetchUsers({ payload, callback }) {
 function* createUser({ payload, callback }) {
 	try {
 		const { data } = yield call(() => api.post(API.USERS, payload))
-		console.log('createUser api.post data ', data)
 		yield put(actions.ADD_USER.SUCCESS(data))
 
 		callback && typeof callback === 'function' && callback()

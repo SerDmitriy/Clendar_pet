@@ -6,10 +6,8 @@ import { API } from '../constants'
 const api = Api.getInstance()
 
 function* fetchCalendar({ payload, callback }) {
-	console.log('979actions fetchCalendar', actions)
 	try {
 		const { data } = yield call(() => api.get(API.CALEDAR, payload))
-		console.log('fetchCalendar api.get data ', data)
 		yield call(actions.FETCH_CALENDAR.SUCCESS(data))
 
 		callback && typeof callback === 'function' && callback()
@@ -25,7 +23,6 @@ function* fetchCalendar({ payload, callback }) {
 function* createCalendar({ payload, callback }) {
 	try {
 		const { data } = yield call(() => api.post(API.CALEDAR, payload))
-		console.log('createCalendar api.post data ', data)
 		yield put(actions.ADD_CALENDAR.SUCCESS(data))
 
 		callback && typeof callback === 'function' && callback()
