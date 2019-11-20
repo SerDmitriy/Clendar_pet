@@ -1,0 +1,32 @@
+{
+	"ru": {
+		"translation": {
+      "Welcome to React": "Приветствуем в React и react-i18next",
+      "hello world": "привет мир",
+			"test": "тест",
+			"Add calendar": "Добавить календарь",
+			"Add user": "Добавить пользователя",
+      "Calendar": "Календарь",
+      "Calendars": "Календари",
+      "Login": "Вход",
+      "Registration": "Регистрация",
+      "Home": "Домашняя страница",
+      "User": "Пользователь",
+      "Users": "Пользователи"
+		}
+	},
+	"ua": {
+	 "translation": {
+		 "Add calendar": "Додати календар",
+		 "Add user": "Додати користувача",
+		 "Welcome to React": "Привітствуємо в React і react-i18next",
+		 "Calendar": "Календар",
+		 "Calendars": "Календарі",
+		 "Login": "Вхід",
+		 "Registration": "Реєстрація",
+		 "Home": "Домашня сторінка",
+		 "User": "Користувач",
+		 "Users": "Користувачі"
+	 }
+ }
+}

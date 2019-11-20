@@ -1,16 +1,14 @@
 import React from 'react'
 import './maincontent.scss'
-import Grid from './grid/Grid'
+import Calendar from './Calendar/Calendar'
 
-class Maincontent extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        <div className="mainContent">Maincontent</div>
-        <Grid/>
-      </React.Fragment>
-    )
-  }
+function MainContent() {
+	return (
+		<div>
+			<div>Input</div>
+			<Calendar />
+		</div>
+	)
 }
 
-export default Maincontent
+export default MainContent
