@@ -20,7 +20,7 @@ class Header extends React.Component {
 	}
 
 	render() {
-		const { addUser, fetchUsers, t } = this.props
+		const { addUser, t } = this.props
 
 		return (
 			<React.Fragment>
@@ -28,12 +28,11 @@ class Header extends React.Component {
 					<button className='header-wrapper__lang' onClick={() => addUser({ id: 5 })} key={123}>
 						{t('Add user')}
 					</button>
-					<button className='header-wrapper__lang' onClick={() => fetchUsers({ id: 7 })} key={77123}>
-						{'fetchUsers'}
-					</button>
 					<select className='lang__select' onChange={this.handleChangeLang}>
 						{LANGS_CAPITAL.map(lang => (
-							<option value={lang.toLowerCase()}>{lang}</option>
+							<option key={lang} value={lang.toLowerCase()}>
+								{lang}
+							</option>
 						))}
 					</select>
 				</div>
@@ -46,7 +45,6 @@ const mapStateToProps = state => ({ user: state.usersReducer })
 
 const mapDispatchToProps = dispatch => ({
 	langUsers: data => dispatch(actions.UPDATE_USER.SUCCESS(data)),
-	fetchUsers: data => dispatch(actions.FETCH_USERS.REQUEST(data)),
 	addUser: data => dispatch(actions.ADD_USER.REQUEST(data)),
 })
 

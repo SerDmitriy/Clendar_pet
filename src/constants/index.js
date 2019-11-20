@@ -25,3 +25,13 @@ export const API = {
 	CALENDARS: '/calendars',
 	USERS: '/users',
 }
+
+export const TEXT_ERR_MSG = {
+	textErrZero: 'Input some text',
+	textErrReq: 'This field is required',
+	textErrMain: '2-20 standart symbols',
+	email: 'Needs email',
+	minSymbols: ' minimum symbols',
+	short: 'Too Short!',
+	long: 'Too Long!',
+}
